@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 import os
+import shutil
+import sys
+
+GREEN = "\033[92m"
+RED = "\033[91m"
+RESET = "\033[0m"
 
 def menu():
     print("""
                           ▄▖    ▗ ▖  ▖    
                           ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
                           ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
-                                        ▌ v0.3.0
+                                       ▌ v0.3.0
          +------------------------+------------------------+
          | 1. Quick Scan          | 6. Stealth Scan        |
          | 2. Full Scan           | 7. Ping Discovery      |
@@ -17,6 +23,11 @@ def menu():
       """)
 
 def main():
+    if not shutil.which("nmap"):
+        print(f"{RED}[-] Error: 'nmap' is not installed or not found in PATH.{RESET}")
+        print(f"{GREEN}[*] Please install it using: sudo apt install nmap{RESET}")
+        sys.exit(1)
+
     menu()
     while True:
         opt = input("Select an option: ")
@@ -58,7 +69,7 @@ def main():
             print("Exiting...")
             break
         else:
-            print("Invalid option. Please try again.")
+            print(f"{RED}Invalid option. Please try again.{RESET}")
 
 if __name__ == "__main__":
     main()
