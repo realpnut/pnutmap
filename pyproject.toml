@@ -2,9 +2,12 @@
 requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+py-modules = ["main"]
+
 [project]
 name = "pnutmap"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
     { name="Peanut", email="pnutvacation@gmail.com" },
 ]
@@ -17,6 +20,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = []
+
+[project.scripts]
+pnutmap = "main:main"
 
 [project.urls]
 "Homepage" = "https://github.com/realpnut/pnutmap"
