@@ -19,5 +19,5 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-"Homepage" = "https://github.com/realpnut/pnmap"
-"Bug Tracker" = "https://github.com/realpnut/pnmap/issues"
+"Homepage" = "https://github.com/realpnut/pnutmap"
+"Bug Tracker" = "https://github.com/realpnut/pnutmap/issues"
