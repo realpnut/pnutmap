@@ -40,11 +40,7 @@ built for Linux environments, learning, lab use, and authorized security testing
 
 ### Debian / Ubuntu / Kali
 ```bash
-sudo apt update
-sudo apt install nmap -y
-git clone https://github.com/realpnut/pnutmap.git
-cd pnutmap
-python3 main.py
+pipx install pnutmap --force
 ```
 
 ## disclaimer
