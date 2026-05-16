@@ -2,12 +2,9 @@
 requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-py-modules = ["main"]
-
 [project]
 name = "pnutmap"
-version = "0.3.0"
+version = "0.5.0"  # THIS SHIT KEEPS ON BREAKING
 authors = [
     { name="Peanut", email="pnutvacation@gmail.com" },
 ]
@@ -22,7 +19,7 @@ classifiers = [
 dependencies = []
 
 [project.scripts]
-pnutmap = "main:main"
+pnutmap = "pnutmap.main:main"
 
 [project.urls]
 "Homepage" = "https://github.com/realpnut/pnutmap"
