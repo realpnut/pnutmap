@@ -1,4 +1,4 @@
-# pnmap
+# pnutmap
 
 ![Python](https://img.shields.io/badge/python-3.x-3776AB?style=flat-square)
 ![Nmap](https://img.shields.io/badge/powered%20by-nmap-4CAF50?style=flat-square)
@@ -7,7 +7,7 @@
 
 ## about
 
-pnmap is a simple interactive Python wrapper for `nmap` designed for fast network scanning from the terminal.
+pnutmap is a simple interactive Python wrapper for `nmap` designed for fast network scanning from the terminal.
 
 it provides an easier way to run common reconnaissance commands without manually typing full nmap flags every time.
 
@@ -42,8 +42,8 @@ built for Linux environments, learning, lab use, and authorized security testing
 ```bash
 sudo apt update
 sudo apt install nmap -y
-git clone https://github.com/realpnut/pnmap.git
-cd pnmap
+git clone https://github.com/realpnut/pnutmap.git
+cd pnutmap
 python3 main.py
 ```
 
