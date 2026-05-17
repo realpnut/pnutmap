@@ -17,14 +17,24 @@ built for Linux environments, learning, lab use, and authorized security testing
 
 ## features
 
-- quick scan (-F)
-- full scan (-p-)
-- service detection (-sV)
-- os detection (-O)
-- aggressive scan (-A)
-- stealth scan (-sS)
-- ping discovery (-sn)
-- vulnerability scan (--script vuln)
+
+![demo](demo/demo.png)
+
+<details>
+<summary>show features</summary>
+
+<br>
+
+- quick scan (`-F`)
+- full scan (`-p-`)
+- service detection (`-sV`)
+- os detection (`-O`)
+- aggressive scan (`-A`)
+- stealth scan (`-sS`)
+- ping discovery (`-sn`)
+- vulnerability scan (`--script vuln`)
+
+</details>
 
 ---
 
