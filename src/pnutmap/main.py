@@ -16,16 +16,16 @@ def menu():
                           ▄▖    ▗ ▖  ▖    
                           ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
                           ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
-                                       ▌ v0.7.0
-         +------------------------+------------------------+
-         | 1. Quick Scan          | 6. Stealth Scan        |
-         | 2. Full Scan           | 7. Ping Discovery      |
-         | 3. Service Detection   | 8. Vulnerability Scan  |
-         | 4. OS Detection        | 9. Show this menu      |
-         | 5. Aggressive Scan     | 0. Exit                |
-         +------------------------+------------------------+
-      """)
-
+                                       ▌ v0.8.0
+         +------------------------+------------------------+------------------------+
+         | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |
+         | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |
+         | 3. Service Detection   | 8. Vulnerability Scan  | 13. Show this Menu     |
+         | 4. OS Detection        | 9. Trace Route         |                        |
+         | 5. Aggressive Scan     | 10.Firewall Evasion    | 0. Exit                |
+         +------------------------+------------------------+------------------------+
+      """
+)
 menu()
 while True:
     opt = input(f"{CYAN}Select an option: {RESET}")
@@ -97,7 +97,41 @@ while True:
         else:
             os.system(f"nmap --script vuln {target}")
     elif opt == '9':
+        target = input("Enter target IP or hostname: ")
+        print(f"{YELLOW}Performing Trace Route...{RESET}")
+        os.system(f"nmap --traceroute {target}")
+    elif opt == '10':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Performing Firewall Evasion Scan...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap -f {target} | tee {filename}")
+        else:
+            os.system(f"nmap -f {target}")
+    elif opt == '11':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Performing IPv6 Scan...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap -6 {target} | tee {filename}")
+        else:
+            os.system(f"nmap -6 {target}")
+
+    elif opt == '12':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Performing SSH Brute Force Scan...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap -p 22 --script ssh-brute {target} | tee {filename}")
+        else:
+            os.system(f"nmap -p 22 --script ssh-brute {target}")
+    
+    elif opt == '13':
         menu()
+
     elif opt == '0':
         print(f"{GREEN}Exiting...{RESET}")
         break
