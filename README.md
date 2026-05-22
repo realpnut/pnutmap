@@ -22,7 +22,7 @@ built for Linux environments, learning, lab use, and authorized security testing
 ## features
 
 
-![demo](demo/demo.png)
+![demo](demo/menu.png)
 
 <details>
 <summary>show features</summary>
