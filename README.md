@@ -37,6 +37,10 @@ built for Linux environments, learning, lab use, and authorized security testing
 - stealth scan (`-sS`)
 - ping discovery (`-sn`)
 - vulnerability scan (`--script vuln`)
+- trace route (`--traceroute`)
+- firewall evasion (`-f`)
+- IPv6 scan (`-6`)
+- SSH brute force (`-p 22 --script ssh-brute`)
 
 </details>
 
