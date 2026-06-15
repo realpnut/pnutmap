@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pnutmap"
-version = "0.8.0"  # THIS SHIT KEEPS ON BREAKING
+version = "0.8.1"  # THIS SHIT KEEPS ON BREAKING
 authors = [
     { name="Peanut", email="pnutvacation@gmail.com" },
 ]
