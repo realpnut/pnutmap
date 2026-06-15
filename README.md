@@ -70,7 +70,7 @@ Select an option:
 
 ## installation (linux)
 
-### Debian / Ubuntu / Kali
+### Debian / Ubuntu / Kali / Arch / ANYTHING
 ```bash
 pipx install pnutmap --force
 ```
