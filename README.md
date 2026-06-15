@@ -21,8 +21,22 @@ built for Linux environments, learning, lab use, and authorized security testing
 
 ## features
 
+```bash
 
-![demo](demo/menu.png)
+                                      ▄▖    ▗ ▖  ▖    
+                                      ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
+                                      ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
+                                                   ▌ v0.8.1
+         +------------------------+------------------------+------------------------+
+         | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |
+         | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |
+         | 3. Service Detection   | 8. Vulnerability Scan  | 13. UDP Scan           |
+         | 4. OS Detection        | 9. Trace Route         | 14. Show this Menu     |
+         | 5. Aggressive Scan     | 10.Firewall Evasion    | 0. Exit                |
+         +------------------------+------------------------+------------------------+
+      
+Select an option:
+```
 
 <details>
 <summary>show features</summary>
