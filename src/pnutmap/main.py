@@ -16,12 +16,12 @@ def menu():
                                       ▄▖    ▗ ▖  ▖    
                                       ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
                                       ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
-                                                   ▌ v0.8.0
+                                                   ▌ v0.8.1
          +------------------------+------------------------+------------------------+
          | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |
          | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |
-         | 3. Service Detection   | 8. Vulnerability Scan  | 13. Show this Menu     |
-         | 4. OS Detection        | 9. Trace Route         |                        |
+         | 3. Service Detection   | 8. Vulnerability Scan  | 13. UDP Scan           |
+         | 4. OS Detection        | 9. Trace Route         | 14. Show this Menu     |
          | 5. Aggressive Scan     | 10.Firewall Evasion    | 0. Exit                |
          +------------------------+------------------------+------------------------+
       """
@@ -128,8 +128,18 @@ while True:
             os.system(f"nmap -p 22 --script ssh-brute {target} | tee {filename}")
         else:
             os.system(f"nmap -p 22 --script ssh-brute {target}")
-    
+
     elif opt == '13':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Performing UDP Scan...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap -sU {target} | tee {filename}")
+        else:
+            os.system(f"nmap -sU {target}")
+    
+    elif opt == '14':
         menu()
 
     elif opt == '0':
