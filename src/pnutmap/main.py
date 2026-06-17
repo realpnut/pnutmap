@@ -13,17 +13,19 @@ RESET = "\033[0m"
 def menu():
     os.system("clear")
     print("""
-                                                  ▄▖    ▗ ▖  ▖    
-                                                  ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
-                                                  ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
-                                                               ▌ v0.8.2
-         +------------------------+------------------------+------------------------+------------------------+
-         | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |                        | 
-         | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |                        | 
-         | 3. Service Detection   | 8. Vulnerability Scan  | 13. UDP Scan           | 16. Show this menu     | 
-         | 4. OS Detection        | 9. Trace Route         | 14. Top 100 port scan  | 17. Clear              | 
-         | 5. Aggressive Scan     | 10.Firewall Evasion    | 15. Top 1000 port scan | 0. Exit                | 
-         +------------------------+------------------------+------------------------+------------------------+
+         +------------------------+------------------------+
+         | 1. Quick Scan          | 6. Stealth Scan        |
+         | 2. Full Scan           | 7. Ping Discovery      |
+         | 3. Service Detection   | 8. Vulnerability Scan  | 
+         | 4. OS Detection        | 9. Trace Route         |     ▄▖    ▗ ▖  ▖    
+         | 5. Aggressive Scan     | 10.Firewall Evasion    |     ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
+         +------------------------+------------------------+     ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
+         | 11.IPv6 Scan           |                        |                   ▌ v0.8.3
+         | 12.SSH Brute Force     |                        | 
+         | 13. UDP Scan           | 16. Show this menu     | 
+         | 14. Top 100 port scan  | 17. Clear              | 
+         | 15. Top 1000 port scan | 0. Exit                | 
+         +------------------------+------------------------+
       """
 )
 menu()
