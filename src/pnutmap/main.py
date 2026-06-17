@@ -13,17 +13,17 @@ RESET = "\033[0m"
 def menu():
     os.system("clear")
     print("""
-                                      ▄▖    ▗ ▖  ▖    
-                                      ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
-                                      ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
-                                                   ▌ v0.8.1
-         +------------------------+------------------------+------------------------+
-         | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |
-         | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |
-         | 3. Service Detection   | 8. Vulnerability Scan  | 13. UDP Scan           |
-         | 4. OS Detection        | 9. Trace Route         | 14. Show this Menu     |
-         | 5. Aggressive Scan     | 10.Firewall Evasion    | 0. Exit                |
-         +------------------------+------------------------+------------------------+
+                                                  ▄▖    ▗ ▖  ▖    
+                                                  ▙▌▛▌▌▌▜▘▛▖▞▌▀▌▛▌
+                                                  ▌ ▌▌▙▌▐▖▌▝ ▌█▌▙▌
+                                                               ▌ v0.8.2
+         +------------------------+------------------------+------------------------+------------------------+
+         | 1. Quick Scan          | 6. Stealth Scan        | 11.IPv6 Scan           |                        | 
+         | 2. Full Scan           | 7. Ping Discovery      | 12.SSH Brute Force     |                        | 
+         | 3. Service Detection   | 8. Vulnerability Scan  | 13. UDP Scan           | 16. Show this menu     | 
+         | 4. OS Detection        | 9. Trace Route         | 14. Top 100 port scan  | 17. Clear              | 
+         | 5. Aggressive Scan     | 10.Firewall Evasion    | 15. Top 1000 port scan | 0. Exit                | 
+         +------------------------+------------------------+------------------------+------------------------+
       """
 )
 menu()
@@ -140,7 +140,30 @@ while True:
             os.system(f"nmap -sU {target}")
     
     elif opt == '14':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Scanning top 100 ports...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap --top-ports 100 {target} | tee {filename}")
+        else:
+            os.system(f"nmap --top-ports 100 {target}")
+
+    elif opt == '15':
+        target = input("Enter target IP or hostname: ")
+        save = input("Do you want to save the output to a file? (y/N): ")
+        print(f"{YELLOW}Scanning top 1000 ports...{RESET}")
+        if save.lower() == 'y':
+            filename = f"pnutmap_scan_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt"
+            os.system(f"nmap --top-ports 1000 {target} | tee {filename}")
+        else:
+            os.system(f"nmap --top-ports 1000 {target}")
+
+    elif opt == "16":
         menu()
+    
+    elif opt == '17':
+        os.system("clear")
 
     elif opt == '0':
         print(f"{GREEN}Exiting...{RESET}")
